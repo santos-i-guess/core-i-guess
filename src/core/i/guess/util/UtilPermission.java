@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import common.i.guess.util.NautHashMap;
 import core.i.guess.command.Permission;
+import core.i.guess.common.NautHashMap;
 
 public class UtilPermission
 {

@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import common.i.guess.util.C;
-import common.i.guess.util.NautHashMap;
+import core.i.guess.common.C;
+import core.i.guess.common.NautHashMap;
 import core.i.guess.util.UtilPermission;
 
 public class CommandCenter implements Listener

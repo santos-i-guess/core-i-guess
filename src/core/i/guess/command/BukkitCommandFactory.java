@@ -7,7 +7,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
-import common.i.guess.util.UtilServer;
+import core.i.guess.common.UtilServer;
 
 public class BukkitCommandFactory
 {

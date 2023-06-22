@@ -12,8 +12,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import common.i.guess.util.F;
 import core.i.guess.MiniPlugin;
+import core.i.guess.common.F;
 
 
 public abstract class CommandBase<PluginType extends MiniPlugin> implements ICommand

@@ -6,7 +6,7 @@
   <version>1</version>
   <packaging>jar</packaging>
   
-  <name>core_i_guess</name>
+  <name>core-i-guess</name>
   <url>https://github.com/santos-i-guess/core-i-guess/1</url>
   
   <build>

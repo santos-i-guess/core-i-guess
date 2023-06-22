@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 
-import common.i.guess.util.UtilServer;
+import core.i.guess.common.UtilServer;
 
 /**
  * A convenience class for Components that are a Listener.  ListenerComponent

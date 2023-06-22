@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-import common.i.guess.util.UtilServer;
+import core.i.guess.common.UtilServer;
 
 /**
  * A Lifetime that is not thread-safe and is essentially a list of Components.

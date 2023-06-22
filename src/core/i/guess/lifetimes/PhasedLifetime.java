@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import common.i.guess.util.UtilServer;
+import core.i.guess.common.UtilServer;
 
 /**
  * A PhasedLifetime is a lifetime that is composed of several

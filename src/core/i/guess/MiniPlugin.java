@@ -9,12 +9,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
-import common.i.guess.util.F;
-import common.i.guess.util.UtilServer;
-import common.i.guess.util.UtilTime;
-import common.i.guess.util.UtilTime.TimeUnit;
 import core.i.guess.command.CommandCenter;
 import core.i.guess.command.ICommand;
+import core.i.guess.common.F;
+import core.i.guess.common.UtilServer;
+import core.i.guess.common.UtilTime;
+import core.i.guess.common.UtilTime.TimeUnit;
 import core.i.guess.lifetimes.Lifetime;
 import core.i.guess.lifetimes.Lifetimed;
 import core.i.guess.lifetimes.SimpleLifetime;

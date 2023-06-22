@@ -21,11 +21,11 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import common.i.guess.util.C;
-import common.i.guess.util.Callback;
-import common.i.guess.util.F;
-import common.i.guess.util.UtilPlayerBase;
-import common.i.guess.util.UtilServer;
+import core.i.guess.common.C;
+import core.i.guess.common.Callback;
+import core.i.guess.common.F;
+import core.i.guess.common.UtilPlayerBase;
+import core.i.guess.common.UtilServer;
 
 public class UtilPlayer
 {

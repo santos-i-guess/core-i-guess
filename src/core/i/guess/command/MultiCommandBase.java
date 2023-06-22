@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Stream;
 
-import common.i.guess.util.C;
-import common.i.guess.util.NautHashMap;
 import core.i.guess.MiniPlugin;
+import core.i.guess.common.C;
+import core.i.guess.common.NautHashMap;
 import core.i.guess.util.UtilPermission;
 
 public abstract class MultiCommandBase<PluginType extends MiniPlugin> extends CommandBase<PluginType>
