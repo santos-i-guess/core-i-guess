@@ -4,7 +4,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class C
 {
-	public static final String blankLine = ChatColor.RESET + " ";
+	public static final String blankLine = ChatColor.RESET + " " + "";
 	
 	public static String Scramble = "" + ChatColor.MAGIC;
 	public static String Bold = "" + ChatColor.BOLD;
