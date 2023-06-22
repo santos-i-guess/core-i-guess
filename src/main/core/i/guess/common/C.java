@@ -6,13 +6,13 @@ public class C
 {
 	public static final String blankLine = ChatColor.RESET + " ";
 	
-	public static String Scramble = "§k";
-	public static String Bold = "§l";
-	public static String Strike = "§m";
-	public static String BoldStrike = "§l§m";
-	public static String Line = "§n";
-	public static String Italics = "§o";
-	public static String Reset = "§r";
+	public static String Scramble = "" + ChatColor.MAGIC;
+	public static String Bold = "" + ChatColor.BOLD;
+	public static String Strike = "" + ChatColor.STRIKETHROUGH;
+	public static String BoldStrike = "" + ChatColor.BOLD + "" + ChatColor.STRIKETHROUGH;
+	public static String Line = "" + ChatColor.UNDERLINE;
+	public static String Italics = "" + ChatColor.ITALIC;
+	public static String Reset = "" + ChatColor.RESET;
 	
 	public static String cAqua = "" + ChatColor.AQUA;
 	public static String cBlack = "" + ChatColor.BLACK;
