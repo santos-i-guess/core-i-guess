@@ -21,19 +21,6 @@
         </configuration>
       </plugin>
     </plugins>
-    
-     <resources>
-	  <resource>
-	    <directory>resources</directory>
-	    <filtering>true</filtering>
-		<includes>
-		  <include>*.yml</include>
-		  <include>*.txt</include>
-		  <include>*.json</include>
-	  	  <include>*.properties</include>
-		</includes>
-	  </resource>
-	</resources>
   </build>
 
   <repositories> 
