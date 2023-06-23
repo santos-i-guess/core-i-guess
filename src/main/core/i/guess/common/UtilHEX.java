@@ -16,7 +16,7 @@ public class UtilHEX
 	
 	private final static Pattern HEX_COLORS_PATTERN = Pattern.compile("\\{#([a-fA-F0-9]{6})}");
     private final static Pattern HEX_GRADIENT_PATTERN = Pattern.compile("\\{#([a-fA-F0-9]{6})(:#([a-fA-F0-9]{6}))+( )([^{}])*(})");
-    private final static Pattern HEX_SPIGOT_PATTERN = Pattern.compile("§[xX](§[a-fA-F0-9]){6}");
+    private final static Pattern HEX_SPIGOT_PATTERN = Pattern.compile("&[xX](&[a-fA-F0-9]){6}");
 
     private final List<ChatColor> FORMAT_COLORS = Arrays.asList(ChatColor.BOLD, ChatColor.ITALIC, ChatColor.UNDERLINE, ChatColor.MAGIC, ChatColor.STRIKETHROUGH, ChatColor.RESET);
 
@@ -116,7 +116,7 @@ public class UtilHEX
 
                     int charIndex = colorLength * i + j;
                     if (charIndex + 1 < chars.length) {
-                        if (chars[charIndex] == '&' || chars[charIndex] == '§') {
+                        if (chars[charIndex] == '&') {
                             if (chars[charIndex + 1] == 'r') {
                                 currentStyles.clear();
                                 j++;
