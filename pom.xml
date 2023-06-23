@@ -3,53 +3,21 @@
   
   <groupId>core-i-guess</groupId>
   <artifactId>core-i-guess</artifactId>
-  <version>1</version>
+  <version>master-SNAPSHOT</version>
   <packaging>jar</packaging>
   
   <name>core-i-guess</name>
-  <url>https://github.com/santos-i-guess/core-i-guess/1</url>
-
+  <url>https://github.com/santos-i-guess/core-i-guess/master-SNAPSHOT</url>
+  
   <build>
+    <finalName>${project.artifactId}</finalName>
+    <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <createDependencyReducedPom>false</createDependencyReducedPom>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
-        <executions>
-          <execution>
-            <id>compile</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>testCompile</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
+          <release>16</release>
         </configuration>
       </plugin>
     </plugins>
