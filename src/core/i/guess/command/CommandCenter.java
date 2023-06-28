@@ -14,9 +14,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import core.i.guess.Managers;
 import core.i.guess.common.C;
 import core.i.guess.common.NautHashMap;
-import core.i.guess.util.UtilPermission;
+import core.i.guess.permission.Permission;
+import core.i.guess.permission.PermissionManager;
 
 public class CommandCenter implements Listener
 {
@@ -28,6 +30,8 @@ public class CommandCenter implements Listener
 	private final List<String> BLOCKED_COMMANDS = new ArrayList<>();
 	private final String MESSAGE = C.cRed + "I'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error.";
 
+	private PermissionManager _permissionManager;
+	
 	private Map<UUID, String> _playerLastCommand = new HashMap<>();
 
 	public enum Perm implements Permission
@@ -40,6 +44,8 @@ public class CommandCenter implements Listener
 		Plugin = instance;
 		Commands = new NautHashMap<>();
 		Plugin.getServer().getPluginManager().registerEvents(this, Plugin);
+		
+		_permissionManager = Managers.require(PermissionManager.class);
 	}
 
 	public static void Initialize(JavaPlugin plugin)
@@ -78,7 +84,7 @@ public class CommandCenter implements Listener
 		{
 			event.setCancelled(true);
 
-			if (UtilPermission.hasPermission(event.getPlayer().getUniqueId(), command.getPermission()))
+			if (_permissionManager.hasPermission(event.getPlayer().getUniqueId(), command.getPermission(), true))
 			{
 
 				_playerLastCommand.put(event.getPlayer().getUniqueId(), commandLabel);
@@ -87,14 +93,10 @@ public class CommandCenter implements Listener
 				
 				command.Execute(event.getPlayer(), args);
 			}
-			else
-			{
-				event.getPlayer().sendMessage(C.mHead + "Permissions> " + C.mBody + "You do not have permission to do that.");
-			}
 			return;
 		}
 
-		if (BLOCKED_COMMANDS.contains(commandName.toLowerCase()) && !(event.getPlayer().isOp() || UtilPermission.hasPermission(event.getPlayer().getUniqueId(), Perm.BLOCKED_COMMAND)))
+		if (BLOCKED_COMMANDS.contains(commandName.toLowerCase()) && !(event.getPlayer().isOp() || _permissionManager.hasPermission(event.getPlayer().getUniqueId(), Perm.BLOCKED_COMMAND)))
 		{
 			event.setCancelled(true);
 			event.getPlayer().sendMessage(MESSAGE);
@@ -130,7 +132,7 @@ public class CommandCenter implements Listener
 		List<String> commands = new ArrayList<>();
 		for (Map.Entry<String, ICommand> entry : Commands.entrySet())
 		{
-			if (UtilPermission.hasPermission(player.getUniqueId(), entry.getValue().getPermission()))
+			if (_permissionManager.hasPermission(player.getUniqueId(), entry.getValue().getPermission()))
 			{
 				commands.add(entry.getKey());
 			}

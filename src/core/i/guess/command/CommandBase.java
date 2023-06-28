@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 import core.i.guess.MiniPlugin;
 import core.i.guess.common.F;
+import core.i.guess.permission.Permission;
 
 
 public abstract class CommandBase<PluginType extends MiniPlugin> implements ICommand

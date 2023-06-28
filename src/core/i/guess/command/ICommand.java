@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 import core.i.guess.lifetimes.Component;
+import core.i.guess.permission.Permission;
 
 public interface ICommand extends Component
 {

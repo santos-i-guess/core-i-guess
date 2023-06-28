@@ -11,7 +11,8 @@ import java.util.stream.Stream;
 import core.i.guess.MiniPlugin;
 import core.i.guess.common.C;
 import core.i.guess.common.NautHashMap;
-import core.i.guess.util.UtilPermission;
+import core.i.guess.permission.Permission;
+import core.i.guess.permission.PermissionManager;
 
 public abstract class MultiCommandBase<PluginType extends MiniPlugin> extends CommandBase<PluginType>
 {
@@ -68,7 +69,7 @@ public abstract class MultiCommandBase<PluginType extends MiniPlugin> extends Co
 
 		if (command != null)
 		{
-			if (UtilPermission.hasPermission(caller.getUniqueId(), command.getPermission()))
+			if (PermissionManager.Instance.hasPermission(caller.getUniqueId(), command.getPermission()))
 			{
 				command.SetAliasUsed(commandName);
 
@@ -105,7 +106,7 @@ public abstract class MultiCommandBase<PluginType extends MiniPlugin> extends Co
 			Stream<ICommand> stream = Commands.values().stream();
 			if (sender instanceof Player)
 			{
-				stream = stream.filter(command -> UtilPermission.hasPermission(((Player) sender).getUniqueId(), command.getPermission()));
+				stream = stream.filter(command -> PermissionManager.Instance.hasPermission(((Player) sender).getUniqueId(), command.getPermission()));
 			}
 			return getMatches(args[0], stream.map(ICommand::Aliases).flatMap(Collection::stream));
 		}
