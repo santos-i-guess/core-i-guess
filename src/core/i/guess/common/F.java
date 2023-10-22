@@ -6,13 +6,13 @@ public class F
 {
 	public static String main(String module, String body)
 	{
-		return C.mHead + module + "> " + C.mBody + body;
+		return C.mHead + "[" + module + "] " + C.mBody + body;
 		//return C.mBody + body;
 	}
 	
 	public static String tute(String sender, String body)
 	{
-		return C.cGold + sender + "> " + C.cWhite + body;
+		return C.cGold + "[" + sender + "] " + C.cWhite + body;
 	}
 	
 	public static String te(String message) 
@@ -42,7 +42,7 @@ public class F
 
 	public static String sys(String head, String body)
 	{
-		return C.sysHead + head + "> " + C.sysBody + body;
+		return C.sysHead + "[" + head + "] " + C.sysBody + body;
 	}
 
 	public static String elem(Object elem)

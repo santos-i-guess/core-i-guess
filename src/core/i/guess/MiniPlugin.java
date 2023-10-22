@@ -28,7 +28,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 		// to never be able to be disabled, then a "Singleton" Lifetime
 		// could be shared between all of them.
 		private final SimpleLifetime _lifetime = new SimpleLifetime();
-		protected String _moduleName = "Default";
+		protected String _moduleName = "Unknown Module";
 		protected JavaPlugin _plugin;
 
 		protected long _initializedTime;
@@ -86,10 +86,10 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 		public final void onEnable()
 		{
 			long epoch = System.currentTimeMillis();
-			log("Initializing...");
+			log("Booting module..");
 			enable();
 			addCommands();
-			log("Enabled in " + UtilTime.convertString(System.currentTimeMillis() - epoch, 1, TimeUnit.FIT) + ".");
+			log("Module booted in " + UtilTime.convertString(System.currentTimeMillis() - epoch, 1, TimeUnit.FIT) + ".");
 		}
 
 		public final void onDisable()
@@ -144,7 +144,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 				catch (Throwable t)
 				{
 					exception.initCause(t);
-					throw new RuntimeException("Exception while executing MiniPlugin task", exception);
+					throw new RuntimeException("Exception while executing module task", exception);
 				}
 			});
 		}
@@ -180,7 +180,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 				catch (Throwable t)
 				{
 					exception.initCause(t);
-					throw new RuntimeException("Exception while executing MiniPlugin task", exception);
+					throw new RuntimeException("Exception while executing module task", exception);
 				}
 			}, time, period);
 		}
@@ -198,7 +198,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 				catch (Throwable t)
 				{
 					exception.initCause(t);
-					throw new RuntimeException("Exception while executing MiniPlugin task", exception);
+					throw new RuntimeException("Exception while executing module task", exception);
 				}
 			});
 		}
@@ -216,7 +216,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 				catch (Throwable t)
 				{
 					exception.initCause(t);
-					throw new RuntimeException("Exception while executing MiniPlugin task", exception);
+					throw new RuntimeException("Exception while executing module task", exception);
 				}
 			}, delay);
 		}
@@ -239,7 +239,7 @@ public abstract class MiniPlugin implements Listener, Lifetimed
 				catch (Throwable t)
 				{
 					exception.initCause(t);
-					throw new RuntimeException("Exception while executing MiniPlugin task", exception);
+					throw new RuntimeException("Exception while executing module task", exception);
 				}
 			}, delay, period);
 		}
