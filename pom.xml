@@ -7,7 +7,7 @@
   <packaging>jar</packaging>
   
   <name>core-i-guess</name>
-  <url>https://github.com/santos-i-guess/core-i-guess/master-SNAPSHOT</url>
+  <url>https://github.com/santos-i-guess/core-i-guess/</url>
   
   <build>
     <finalName>${project.artifactId}</finalName>
